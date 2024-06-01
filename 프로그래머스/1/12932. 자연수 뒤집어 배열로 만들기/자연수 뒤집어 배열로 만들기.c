@@ -5,12 +5,12 @@
 int* solution(long long n) {
     // 리턴할 값은 메모리를 동적 할당해주세요.
     int* answer = (int*)malloc(sizeof(int)*12);
-    int i;
-    for(i=0; 10<=n; i++){
-        answer[i] = (int)(n%10);
+    
+    int temp = 0;
+    while(0<n){
+        answer[temp++] = n%10;
         n /= 10;
     }
-    answer[i] = (int)n;
 
     return answer;
 }
