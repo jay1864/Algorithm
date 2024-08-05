@@ -1,13 +1,13 @@
 SELECT FLAVOR
 FROM FIRST_HALF 
-WHERE FLAVOR IN 
-    (
+WHERE FLAVOR 
+    IN (
     SELECT FLAVOR 
     FROM ICECREAM_INFO 
-    WHERE INGREDIENT_TYPE = 'fruit_based'
-    ) 
+    WHERE INGREDIENT_TYPE = 'fruit_based')   
     AND TOTAL_ORDER > 3000
 ORDER BY TOTAL_ORDER DESC;
 
 # 총 주문량 > 30000
-# 아이스크림의 주 성분이 과일 => ICECREAM_INFO 테이블 INGREDIENT_TYPE 컬럼 사용
+# 아이스크림의 주 성분이 과일 => ICECREAM_INFO 테이블의 INGREDIENT_TYPE 컬럼 사용하여 필터링
+# 총 주문량 큰 순서로 조회 => TOTAL_ORDER 컬럼 내림차순
